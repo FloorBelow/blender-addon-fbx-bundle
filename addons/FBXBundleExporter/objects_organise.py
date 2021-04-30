@@ -407,7 +407,11 @@ def get_key(obj):
 		for cluster in clusters:
 			if obj in cluster['objects']:
 				return cluster['objects'][0].name
-
+			
+	elif mode_bundle == 'COLLECTION':
+		# Use collection name
+		return obj.users_collection[0].name
+			
 	return "UNDEFINED"
 
 
